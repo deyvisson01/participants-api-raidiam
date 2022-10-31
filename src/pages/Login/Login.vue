@@ -25,7 +25,7 @@
             >
           </div>
 
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" @click="handleClick">
             Entrar
           </button>
         </div>
@@ -43,6 +43,11 @@ export default {
       password: '123'
     }
   }),
+  methods: {
+    handleClick() {
+      this.$router.push('/HelloWorld')
+    }
+  }
 }
 </script>
 

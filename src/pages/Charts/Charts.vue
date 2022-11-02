@@ -1,26 +1,19 @@
 <template>
   <div class="hello">
-    <Table :columns="getColumns" :rows="getData" :perpage="getPageSize"/>
+    CHARTSsss
   </div>
 </template>
 
 <script>
-import Table from './table.vue'
 import {mapGetters, mapActions} from 'vuex'
 
 export default {
-  name: 'HelloWorld',
-  components: {
-    Table
-  },
+  name: 'Charts',
   computed: mapGetters([
-    'getData',
-    'getColumns',
-    'getPageSize'
+    'getCities'
   ]),
   methods: mapActions([
     'actionGetData',
-    'actionSetPageSize'
   ]),
   created () {
     this.actionGetData()

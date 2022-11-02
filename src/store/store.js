@@ -7,11 +7,50 @@ Vue.use(Vuex)
 export const GET_DATA = 'GET_DATA'
 
 const state = {
-    data: []
+    data: [],
+    columns: [
+        {
+            dataKey: "LegalEntityName",
+            name: "Legal Entity Name",
+            align: "left",
+        },
+        {
+            dataKey: "OrganisationName",
+            name: "Organisation Name",
+            align: "left",
+        },
+        {
+            dataKey: "RegisteredName",
+            name: "Registered Name",
+            align: "left",
+        },
+        {
+            dataKey: "City",
+            name: "City",
+            align: "left",
+        },
+        {
+            dataKey: "CreatedOn",
+            name: "Created On",
+            align: "left",
+            formatValue(value) {
+            return format(value, "dd MMMM yyyy");
+            },
+        },
+        {
+            dataKey: "RegistrationNumber",
+            name: "Registration Number",
+            align: "right",
+            formatValue(value) {
+            return value.toLocaleString("en-GB");
+            },
+        },
+    ],
 }
 
 const getters = {
-    getData: (state) => state.data
+    getData: (state) => state.data,
+    getColumns: (state) => state.columns,
 }
 
 const mutations = {

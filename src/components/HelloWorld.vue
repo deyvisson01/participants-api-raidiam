@@ -1,20 +1,21 @@
 <template>
   <div class="hello">
-    Teste: {{ getData }}
+    <Table :columns="getColumns" :rows="getData" :perpage="10"/>
   </div>
 </template>
 
 <script>
-
+import Table from './table.vue'
 import {mapGetters, mapActions} from 'vuex'
 
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  components: {
+    Table
   },
   computed: mapGetters([
-    'getData'
+    'getData',
+    'getColumns'
   ]),
   methods: mapActions([
     'actionGetData'

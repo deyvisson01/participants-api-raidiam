@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import api from '../api'
 
+const dayjs = require('dayjs')
+
 Vue.use(Vuex)
 
 export const GET_DATA = 'GET_DATA'
@@ -9,11 +11,6 @@ export const GET_DATA = 'GET_DATA'
 const state = {
     data: [],
     columns: [
-        {
-            dataKey: "LegalEntityName",
-            name: "Legal Entity Name",
-            align: "left",
-        },
         {
             dataKey: "OrganisationName",
             name: "Organisation Name",
@@ -32,18 +29,15 @@ const state = {
         {
             dataKey: "CreatedOn",
             name: "Created On",
-            align: "left",
+            align: "right",
             formatValue(value) {
-            return format(value, "dd MMMM yyyy");
+                return dayjs(value).format('MMM D, YYYY - h:mm A')
             },
         },
         {
             dataKey: "RegistrationNumber",
-            name: "Registration Number",
+            name: "Reg. Number",
             align: "right",
-            formatValue(value) {
-            return value.toLocaleString("en-GB");
-            },
         },
     ],
 }

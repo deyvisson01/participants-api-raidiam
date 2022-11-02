@@ -19,7 +19,7 @@
                   @click="sortBy(column.dataKey)"
                 >
                   <span class="caption text-capitalize">
-                    <h2>{{ column.name }}</h2>
+                    <h3>{{ column.name }}</h3>
                   </span>
                   <v-icon right>mdi-sort</v-icon>
                 </v-btn>
@@ -181,6 +181,7 @@ table {
   border-spacing: 2px;
   border-color: gray;
   width: 100%;
+  min-height: 100%;
 }
 
 th {

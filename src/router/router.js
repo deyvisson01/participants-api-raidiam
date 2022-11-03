@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router'
 
 import Login from '../pages/Login/Login.vue'
-import HelloWorld from '../components/HelloWorld.vue'
+import HelloWorld from '../pages/Home/HelloWorld.vue'
 import Charts from '../pages/Charts/Charts.vue'
 
 const router = new VueRouter({

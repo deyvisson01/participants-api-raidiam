@@ -1,6 +1,6 @@
 <template>
   <div>
-    CHARTSsss
+    <h1> Quantidade de unidades cadastradas por cidade </h1>
     <chartBar v-if="getLoadedData" :labels="getUniqueCities" :data="getCountUniqueCities"/>
   </div>
 </template>
@@ -31,8 +31,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+h1 {
+  margin: 40px;
 }
 a {
   color: #42b983;

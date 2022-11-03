@@ -71,7 +71,7 @@ export default {
         datasets: [
           {
             label: 'Unidades por cidade',
-            backgroundColor: '#f87979',
+            backgroundColor: '#105f66',
             data: this.data
           }
         ]

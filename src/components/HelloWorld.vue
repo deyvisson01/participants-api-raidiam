@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <Table :columns="getColumns" :rows="getData" :perpage="getPageSize"/>
+    <Table v-if="getLoadedData" :columns="getColumns" :rows="getData" :perpage="getPageSize"/>
   </div>
 </template>
 
@@ -16,7 +16,8 @@ export default {
   computed: mapGetters([
     'getData',
     'getColumns',
-    'getPageSize'
+    'getPageSize',
+    'getLoadedData'
   ]),
   methods: mapActions([
     'actionGetData',

@@ -1,16 +1,24 @@
 <template>
-  <div class="hello">
+  <div>
     CHARTSsss
+    <chartBar v-if="getLoadedData" :labels="getUniqueCities" :data="getCountUniqueCities"/>
   </div>
 </template>
 
 <script>
+import chartBar from '../../components/chartBar.vue'
 import {mapGetters, mapActions} from 'vuex'
 
 export default {
   name: 'Charts',
+  components: {
+    chartBar
+  },
   computed: mapGetters([
-    'getCities'
+    'getCities',
+    'getUniqueCities',
+    'getCountUniqueCities',
+    'getLoadedData'
   ]),
   methods: mapActions([
     'actionGetData',
@@ -25,14 +33,6 @@ export default {
 <style scoped>
 h3 {
   margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
 }
 a {
   color: #42b983;
